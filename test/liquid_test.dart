@@ -207,6 +207,21 @@ void main() {
               '{% if a != "this" %}no{% elseif 7 > 4 %}yes{% else %}no{% endif %}',
               null));
       expect(template.render(context), equals('yes'));
+      template = Template.parse(
+          context,
+          Source(
+              null,
+              '{% if a %}yes{% endif %}',
+              null));
+      expect(template.render(context), equals('yes'));
+      
+      template = Template.parse(
+          context,
+          Source(
+              null,
+              '{% if a and a == "this" %}yes{% endif %}',
+              null));
+      expect(template.render(context), equals('yes'));
     });
 
     test('include', () {
