@@ -1,3 +1,8 @@
+> Note: 目前还不支持连续两个以上`and`或`or`的运算，如 `{% if a and a == "" and a == null %}` 将会出现错误。
+Currently the continuous `and` and `or` will not be supported. For example `{% if a and a == "" and a == null %}` will get a error result.
+
+
+
 A dart port of the liquid / django template engine. 
 
 Created under a BSD-style
